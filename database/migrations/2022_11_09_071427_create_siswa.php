@@ -15,6 +15,15 @@ class CreateSiswa extends Migration
     {
         Schema::create('siswa', function (Blueprint $table) {
             $table->id();
+            //nis
+            $table->integer('nis');
+            //nama
+            $table->string('nama',100);
+
+            //alamat
+            $table->string('alamat');
+            //jenis_kelamin
+            $table->string('jenis_kelamin');
             $table->timestamps();
         });
     }
@@ -27,15 +36,5 @@ class CreateSiswa extends Migration
     public function down()
     {
         Schema::dropIfExists('siswa');
-        $table->id();
-        // nomor_induk__siswa .. create field NIS as integer data type  
-        $table->integer('nomor_induk_siswa');
-        // nama ... create nama as varchar data type with lenght character  100
-        $table->string('nama', 100);
-        // alamat .. create alamat as varchar data type
-        $table->string('alamat');
-        // jenis_kelamin .. create gender as varchar data type
-        $table->string('jenis_kelamin');
-        $table->timestamp();
     }
-}
+};
